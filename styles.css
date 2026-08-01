@@ -1,5 +1,5 @@
 /*
- * Conscious Engines (consciousengines.com) — Brutal High-Tech Engine Design System
+ * Conscious Engines — 3D, Particles, Parallax & Micro-Interactions Design System
  */
 
 :root {
@@ -10,15 +10,12 @@
 
     --border-color: #e2e8f0;
     --border-dark: #cbd5e1;
-    --border-glow: rgba(2, 132, 199, 0.4);
 
     --text-primary: #0f172a;
     --text-secondary: #334155;
     --text-muted: #64748b;
     
     --brand-blue: #0284c7;
-    --brand-cyan: #06b6d4;
-    --brand-green: #10b981;
 
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -44,10 +41,30 @@ html, body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+body.page-loaded {
+    opacity: 1;
 }
 
 main {
     flex: 1;
+    position: relative;
+    z-index: 10;
+}
+
+/* Floating Ambient Particle Canvas */
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
 }
 
 /* Handwritten Note Accent */
@@ -56,15 +73,18 @@ main {
     color: var(--brand-blue);
     font-size: 1.4rem;
     font-weight: 600;
+    display: inline-block;
+    transition: transform 0.1s ease-out;
 }
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     padding: 1.1rem 0;
+    z-index: 1000;
 }
 
 .navbar-brand {
@@ -100,7 +120,7 @@ main {
     background-color: var(--bg-surface);
 }
 
-/* Buttons */
+/* Micro-Interaction Buttons */
 .btn-ce-primary {
     background: var(--text-primary);
     color: #ffffff !important;
@@ -109,7 +129,7 @@ main {
     padding: 0.7rem 1.6rem;
     border-radius: var(--radius-pill);
     border: 1px solid var(--text-primary);
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -120,8 +140,12 @@ main {
 .btn-ce-primary:hover {
     background: #1e293b;
     border-color: #1e293b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.2);
+}
+
+.btn-ce-primary:active {
+    transform: translateY(0) scale(0.98);
 }
 
 .btn-ce-outline {
@@ -132,7 +156,7 @@ main {
     font-size: 0.9rem;
     padding: 0.7rem 1.6rem;
     border-radius: var(--radius-pill);
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -144,9 +168,15 @@ main {
     background: var(--bg-surface);
     border-color: var(--brand-blue);
     color: var(--brand-blue) !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.12);
 }
 
-/* Hero Section */
+.btn-ce-outline:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* Hero Section & Parallax */
 .hero-section {
     padding: 6rem 0 5rem;
     background: radial-gradient(circle at 50% 15%, rgba(2, 132, 199, 0.08) 0%, transparent 65%);
@@ -158,6 +188,7 @@ main {
     letter-spacing: -0.035em;
     line-height: 1.1;
     color: var(--text-primary);
+    transition: transform 0.1s ease-out;
 }
 
 .hero-lead {
@@ -176,13 +207,20 @@ main {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Impact Stat Grid */
+/* Impact Stat Box & 3D Tilt */
 .stat-box {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 1.75rem;
     text-align: center;
+    will-change: transform;
+    transition: transform 0.15s ease-out, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-box:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.1);
 }
 
 .stat-number {
@@ -200,20 +238,21 @@ main {
     margin-top: 0.5rem;
 }
 
-/* Cards & Architecture Steps */
+/* 3D Tilt Cards */
 .ce-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 2.25rem;
     height: 100%;
-    transition: all 0.25s ease;
+    will-change: transform;
+    transition: transform 0.15s ease-out, border-color 0.25s ease, box-shadow 0.25s ease;
+    transform-style: preserve-3d;
 }
 
 .ce-card:hover {
     border-color: var(--brand-blue);
-    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
-    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(2, 132, 199, 0.12);
 }
 
 .step-number {
@@ -231,19 +270,20 @@ main {
     margin-bottom: 1rem;
 }
 
-/* Job Cards */
+/* 3D Tilt Job Cards */
 .job-item {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 2rem;
-    transition: all 0.2s ease;
+    will-change: transform;
+    transition: transform 0.15s ease-out, border-color 0.25s ease, box-shadow 0.25s ease;
     margin-bottom: 1.25rem;
 }
 
 .job-item:hover {
     border-color: var(--border-dark);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 /* Accordion FAQ */
@@ -294,6 +334,8 @@ footer {
     border-top: 1px solid var(--border-color);
     padding: 4.5rem 0 2.5rem;
     margin-top: auto;
+    position: relative;
+    z-index: 10;
 }
 
 footer h5 {
