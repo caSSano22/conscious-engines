@@ -41,18 +41,21 @@
                         <a class="nav-link active" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#technology">Technology</a>
+                        <a class="nav-link" href="#pipeline">Pipeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#solutions">Solutions</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="careers.html">Open Roles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#faq">FAQ</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">
                     <button class="btn-ce-primary" data-bs-toggle="modal" data-bs-target="#touchModal">
-                        Get in Touch <i class="bi bi-arrow-right"></i>
+                        Get in Touch <i class="bi bi-arrow-right ms-1"></i>
                     </button>
                 </div>
             </div>
@@ -81,7 +84,35 @@
                     </button>
                 </div>
 
-                <!-- Model Benchmark Comparison Visualizer -->
+                <!-- Impact Metrics Bar -->
+                <div class="row g-3 justify-content-center mb-5" style="max-width: 920px; margin: 0 auto;">
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">150x</div>
+                            <div class="stat-label">Faster Execution</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">99%</div>
+                            <div class="stat-label">Lower API Costs</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Data Privacy</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="stat-box">
+                            <div class="stat-number">10M+</div>
+                            <div class="stat-label">Daily Inferences</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Benchmark Visualizer -->
                 <div class="p-4 rounded-4 border border-slate-200 bg-light text-start mx-auto shadow-sm" style="max-width: 920px;">
                     <div class="d-flex align-items-center justify-content-between pb-3 mb-4 border-bottom border-slate-200">
                         <div class="d-flex align-items-center gap-2 font-monospace fs-6">
@@ -140,37 +171,132 @@
             </div>
         </section>
 
-        <!-- Why Specialized Small Models (Technology Section) -->
-        <section class="py-5 border-top border-bottom border-slate-200 bg-light" id="technology">
+        <!-- The Conscious Pipeline (How It Works) -->
+        <section class="py-5 border-top border-bottom border-slate-200 bg-white" id="pipeline">
             <div class="container">
                 <div class="text-center mb-5">
-                    <span class="text-primary font-monospace fs-6 text-uppercase d-block mb-2" style="color: #0284c7;">// CORE ARCHITECTURE</span>
-                    <h2 class="display-6 fw-bold text-dark mb-3">Why Specialized AI Engines?</h2>
-                    <p class="text-muted mx-auto" style="max-width: 620px;">
-                        Generalist models are bloated, slow, and expensive. Specialized small models provide laser-focused intelligence exactly where it matters.
+                    <span class="text-primary font-monospace fs-6 text-uppercase d-block mb-2" style="color: #0284c7;">// DISTILLATION PIPELINE</span>
+                    <h2 class="display-6 fw-bold text-dark mb-3">How Conscious Engines Work</h2>
+                    <p class="text-muted mx-auto" style="max-width: 640px;">
+                        From massive enterprise knowledge bases to sub-millisecond, on-device reasoning models.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ce-card">
+                            <div class="step-number">01</div>
+                            <h3>Data &amp; Workflow Ingestion</h3>
+                            <p>We extract high-signal domain logs, user interactions, and specific workflow rules from your products.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ce-card">
+                            <div class="step-number">02</div>
+                            <h3>Teacher Distillation</h3>
+                            <p>Massive 400B teacher models supervise and distill specialized reasoning capabilities into compact student architectures.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ce-card">
+                            <div class="step-number">03</div>
+                            <h3>Hardware Quantization</h3>
+                            <p>Models are quantized (2-bit to FP8) and fused with high-performance CUDA &amp; Metal kernels.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="ce-card">
+                            <div class="step-number">04</div>
+                            <h3>Embedded Deployment</h3>
+                            <p>Shipped directly on mobile, desktop, or edge enclaves with sub-10ms latency and 100% offline sovereignty.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use-Cases & Industry Solutions -->
+        <section class="py-5 border-bottom border-slate-200 bg-light" id="solutions">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <span class="text-primary font-monospace fs-6 text-uppercase d-block mb-2" style="color: #0284c7;">// INDUSTRY SOLUTIONS</span>
+                    <h2 class="display-6 fw-bold text-dark mb-3">Built for High-Stakes Applications</h2>
+                    <p class="text-muted mx-auto" style="max-width: 640px;">
+                        Where latency, cost, and privacy make generalist APIs impossible.
                     </p>
                 </div>
 
                 <div class="row g-4">
                     <div class="col-lg-4 col-md-6">
                         <div class="ce-card">
-                            <div class="mb-3 text-primary fs-3" style="color: #0284c7;"><i class="bi bi-lightning-charge"></i></div>
-                            <h3>Sub-Millisecond Edge Speed</h3>
-                            <p>Embedded directly on-device or edge nodes for instant response times without cloud roundtrip delays.</p>
+                            <div class="mb-3 text-primary fs-3" style="color: #0284c7;"><i class="bi bi-graph-up-arrow"></i></div>
+                            <h3>Automated Trading &amp; Execution</h3>
+                            <p>Sub-millisecond model inference for smart order routing, portfolio risk management, and Robinhood / DEX trade execution.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="ce-card">
-                            <div class="mb-3 text-primary fs-3" style="color: #0284c7;"><i class="bi bi-cpu"></i></div>
-                            <h3>Targeted Distillation</h3>
-                            <p>Compress massive model reasoning into compact 1B - 7B models tailored specifically for your workflow.</p>
+                            <div class="mb-3 text-primary fs-3" style="color: #0284c7;"><i class="bi bi-phone"></i></div>
+                            <h3>On-Device Consumer Products</h3>
+                            <p>Run intelligent features locally on iOS, Android, or desktop without cloud latency or monthly server bills.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="ce-card">
-                            <div class="mb-3 text-primary fs-3" style="color: #0284c7;"><i class="bi bi-shield-check"></i></div>
-                            <h3>Complete Data Sovereignty</h3>
-                            <p>100% private execution with zero data leakage to third-party frontier API providers.</p>
+                            <div class="mb-3 text-primary fs-3" style="color: #0284c7;"><i class="bi bi-shield-lock"></i></div>
+                            <h3>Private Air-Gapped Enterprise</h3>
+                            <p>Deploy specialized code &amp; document reasoning models inside zero-trust corporate enclaves.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequently Asked Questions (FAQ) -->
+        <section class="py-5 bg-white" id="faq">
+            <div class="container" style="max-width: 840px;">
+                <div class="text-center mb-5">
+                    <span class="text-primary font-monospace fs-6 text-uppercase d-block mb-2" style="color: #0284c7;">// FAQ</span>
+                    <h2 class="display-6 fw-bold text-dark mb-3">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                How does model distillation compare to standard RAG?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                RAG retrieves text context at query time but still relies on slow, expensive generalist LLMs. Conscious Engines distill the actual reasoning patterns directly into the model weights, resulting in &gt;100x faster execution and zero external API calls.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Can Conscious Engines run completely offline?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes. Our quantized small models (1B to 7B parameters) are engineered for edge deployment on Apple Silicon, NVIDIA Jetson, Android SOCs, or isolated corporate servers without needing internet connectivity.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                What is the timeline for training a custom specialist engine?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Typically 1 to 3 weeks from dataset ingestion and teacher distillation to final CUDA kernel fusion and production deployment.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,7 +321,8 @@
                     <h5>Navigation</h5>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#pipeline">Pipeline</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
                         <li><a href="careers.html">Open Roles</a></li>
                     </ul>
                 </div>
@@ -203,6 +330,7 @@
                     <h5>Company</h5>
                     <ul>
                         <li><a href="careers.html">Careers</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#" data-bs-toggle="modal" data-bs-target="#touchModal">Get in Touch</a></li>
                     </ul>
                 </div>
