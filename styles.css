@@ -1,21 +1,24 @@
 /*
- * Conscious Engines (consciousengines.com) — Rich Enterprise AI Design System
+ * Conscious Engines (consciousengines.com) — Brutal High-Tech Engine Design System
  */
 
 :root {
     --bg-main: #ffffff;
     --bg-surface: #f8fafc;
+    --bg-dark-engine: #090a0f;
     --bg-card: #ffffff;
+
     --border-color: #e2e8f0;
     --border-dark: #cbd5e1;
+    --border-glow: rgba(2, 132, 199, 0.4);
 
     --text-primary: #0f172a;
     --text-secondary: #334155;
     --text-muted: #64748b;
     
     --brand-blue: #0284c7;
-    --brand-blue-bg: rgba(2, 132, 199, 0.06);
-    --brand-emerald: #059669;
+    --brand-cyan: #06b6d4;
+    --brand-green: #10b981;
 
     --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -164,6 +167,15 @@ main {
     margin: 0 auto;
 }
 
+/* Brutal Engine Terminal Visualizer */
+.engine-terminal {
+    background-color: var(--bg-dark-engine);
+    border: 1px solid #1e293b;
+    border-radius: var(--radius-lg);
+    color: #e2e8f0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
 /* Impact Stat Grid */
 .stat-box {
     background: var(--bg-surface);
@@ -199,8 +211,8 @@ main {
 }
 
 .ce-card:hover {
-    border-color: var(--border-dark);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-color: var(--brand-blue);
+    box-shadow: 0 10px 30px rgba(2, 132, 199, 0.1);
     transform: translateY(-3px);
 }
 
@@ -210,7 +222,7 @@ main {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: var(--brand-blue-bg);
+    background: rgba(2, 132, 199, 0.08);
     color: var(--brand-blue);
     border-radius: 50%;
     font-weight: 700;
