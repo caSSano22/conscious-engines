@@ -1,5 +1,5 @@
 /*
- * Conscious Engines — 3D, Particles, Parallax & Micro-Interactions Design System
+ * Conscious Engines — 3D, Particles, Parallax & Futuristic Minimalist Loading
  */
 
 :root {
@@ -47,6 +47,24 @@ main {
     flex: 1;
     position: relative;
     z-index: 10;
+}
+
+/* Futuristic Minimalist Top Loading Progress Bar */
+#ceTopLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #0284c7, #38bdf8, #0284c7);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 20px rgba(2, 132, 199, 0.5);
+    z-index: 99999;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+#ceTopLoader.loaded {
+    width: 100%;
+    opacity: 0;
 }
 
 /* Floating Ambient Particle Canvas */

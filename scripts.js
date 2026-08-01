@@ -1,10 +1,19 @@
 /*
- * Conscious Engines (consciousengines.com) — Advanced 3D, Particles, Parallax & Micro-Interactions
+ * Conscious Engines — 3D, Particles, Parallax & Futuristic Loading Progress
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initial Page Load Animation
-    document.body.classList.add('page-loaded');
+    // 1. Futuristic Top Loading Progress Bar Animation
+    const topLoader = document.getElementById('ceTopLoader');
+    if (topLoader) {
+        topLoader.style.width = '60%';
+        setTimeout(() => {
+            topLoader.style.width = '100%';
+            setTimeout(() => {
+                topLoader.classList.add('loaded');
+            }, 300);
+        }, 150);
+    }
 
     // 2. Ambient Particle Canvas Animation
     const canvas = document.getElementById('particleCanvas');
