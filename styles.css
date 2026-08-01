@@ -1,0 +1,270 @@
+/*
+ * Conscious Engines (consciousengines.com) — Minimalist Dark AI Design System
+ */
+
+:root {
+    --bg-black: #06070a;
+    --bg-dark: #090a0f;
+    --bg-card: #0e1017;
+    --bg-card-hover: #141722;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-glow: rgba(56, 189, 248, 0.3);
+
+    --accent-cyan: #38bdf8;
+    --accent-green: #22c55e;
+    --accent-cyan-glow: rgba(56, 189, 248, 0.25);
+
+    --text-white: #ffffff;
+    --text-light: #cbd5e1;
+    --text-muted: #94a3b8;
+    --text-sub: #64748b;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-pill: 100px;
+
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-hand: 'Caveat', cursive;
+
+    --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-black);
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-cyan);
+}
+
+/* Handwritten Caveat Note */
+.hand-note {
+    font-family: var(--font-hand);
+    color: var(--accent-cyan);
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(6, 7, 10, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #ffffff !important;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+}
+
+.navbar-brand img.logo-img {
+    height: 32px;
+    width: 32px;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+    padding: 0.5rem 1.2rem !important;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+}
+
+/* Buttons */
+.btn-ce-primary {
+    background: #ffffff;
+    color: #000000 !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: var(--radius-pill);
+    border: none;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-ce-primary:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.btn-ce-dark {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: var(--radius-pill);
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-ce-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-cyan);
+    color: #ffffff !important;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 7.5rem 0 6rem;
+    position: relative;
+    background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 65%);
+}
+
+.hero-title {
+    font-size: clamp(2.8rem, 5.8vw, 4.8rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.hero-lead {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* Cards & Layout */
+.section-padding {
+    padding: 6rem 0;
+}
+
+.ce-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2.25rem;
+    transition: var(--transition);
+    height: 100%;
+}
+
+.ce-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+    box-shadow: 0 10px 35px rgba(56, 189, 248, 0.12);
+    transform: translateY(-3px);
+}
+
+.ce-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+}
+
+.ce-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Modal Drawer */
+.modal-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-white);
+}
+
+.form-control, .form-select {
+    background-color: #06070a !important;
+    border: 1px solid var(--border-color) !important;
+    color: #ffffff !important;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--accent-cyan) !important;
+    box-shadow: 0 0 15px var(--accent-cyan-glow) !important;
+}
+
+/* Footer */
+footer {
+    background-color: #030406;
+    border-top: 1px solid var(--border-color);
+    padding: 4.5rem 0 2.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+footer h5 {
+    color: #ffffff;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+}
+
+footer a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--accent-cyan);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.75rem;
+}
